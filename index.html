@@ -8,13 +8,12 @@
     <title>WordBeater</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./app.css">
 </head>
 
-<body class="bg-dark text-white ">
+<body class="backGround">
     <header class="bg-secondary text-center p-3 mb-5">
-        <h1>WordBeater</h1>
+        <h1 class="appTitle">Speed Typer</h1>
     </header>
     <div class="container text-center">
 
@@ -48,15 +47,25 @@
                             <h5>Instructions</h5>
                             <p>Type each word in the given amount of seconds to score. To play again, just type the current
                                 word. Your score will reset</p>
-                            <button id="special" onclick="">I'm Special!</button>
+                            <button id="special">I'm Special!</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
     <script src="./main.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#special").on("click", function () {
+                $.ajax("http://randomword.setgetgo.com/", function (data, status) {
+                    alert("Data: " + data + "\nStatus: " + status);
+                });
+            });
+        })
+    </script>
 </body>
 
 </html>
