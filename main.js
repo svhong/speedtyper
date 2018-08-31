@@ -197,3 +197,8 @@ function checkStatus() {
     score = -1;
   }
 }
+
+// add click to button
+document.getElementById("special").onclick = function() {
+  alert("hello world!");
+};
